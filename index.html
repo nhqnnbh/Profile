@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="Nguyễn Ngọc Bảo Hân - Portfolio Cá Nhân">
-  <title>Bảo Hân // Portfolio</title>
+  <title>Profile NNBH</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
@@ -49,72 +50,93 @@
   </script>
 </head>
 <body class="font-sans antialiased overflow-x-hidden selection:bg-theme-primary selection:text-theme-bg min-h-screen relative flex flex-col">
+
   <canvas id="particles-canvas"></canvas>
   <audio id="bg-music"></audio>
-  <div id="intro-screen" class="fixed inset-0 z-[9999] bg-theme-bg flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+
+  <!-- MÀN HÌNH INTRO -->
+  <div id="intro-screen" class="fixed inset-0 z-[9999] bg-theme-bg flex flex-col items-center justify-center transition-all duration-700 ease-in-out px-4">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--border-color)_0%,transparent_60%)] opacity-30"></div>
-    <div class="z-10 text-center space-y-6 transform transition-transform duration-700" id="intro-content">
-      <h1 class="text-4xl sm:text-6xl font-bold tracking-widest text-theme-text">BẢO <span class="text-theme-primary">HÂN</span></h1>
-      <p class="text-theme-muted font-medium tracking-wide text-sm sm:text-base uppercase" data-i18n="intro_sub">Danh Mục Cá Nhân & Thành Tựu</p>
-      <button id="enter-btn" class="mt-8 px-8 py-3.5 rounded-full bg-theme-primary text-theme-bg font-bold text-sm shadow-lg hover:scale-105 transition-all flex items-center gap-3 mx-auto">
+    <div class="z-10 text-center space-y-6 transform transition-transform duration-700 w-full" id="intro-content">
+      <h1 class="text-5xl sm:text-7xl font-bold tracking-widest text-theme-text">BẢO <span class="text-theme-primary">HÂN</span></h1>
+      <p class="text-theme-muted font-medium tracking-wide text-xs sm:text-base uppercase" data-i18n="intro_sub">Danh Mục Cá Nhân & Thành Tựu</p>
+      <button id="enter-btn" class="mt-8 px-8 py-3.5 rounded-full bg-theme-primary text-theme-bg font-bold text-sm shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-3 mx-auto active:scale-95">
         <i class="fa-solid fa-play text-xs"></i>
         <span data-i18n="intro_btn">Khám phá ngay</span>
       </button>
     </div>
   </div>
-  <div id="lightbox-modal" class="fixed inset-0 z-[9998] bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
-    <button id="close-lightbox" class="absolute top-6 right-6 text-white text-3xl hover:text-theme-primary transition-colors z-50">
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[9998] bg-black/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-2 sm:p-4">
+    <button id="close-lightbox" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl hover:text-theme-primary transition-colors z-50 p-2">
       <i class="fa-solid fa-xmark"></i>
     </button>
-    <img src="src/achievements/2aOboR2Hdd96AhxbqOh86BfuNt95fIBEb9z9tOVc.jpg" alt="Thành tựu" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300" id="lightbox-img">
+    <img src="src/achievements/2aOboR2Hdd96AhxbqOh86BfuNt95fIBEb9z9tOVc.jpg" alt="Thành tựu" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300" id="lightbox-img">
   </div>
-  <div class="glow-orb w-96 h-96 -top-32 -left-32"></div>
-  <div class="glow-orb w-[500px] h-[500px] top-1/2 -right-32"></div>
-  <div class="glow-orb w-[600px] h-[600px] -bottom-48 left-1/4"></div>
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-theme-card border-b border-theme-border transition-all duration-300 shadow-sm">
+
+  <!-- GLOW NỀN -->
+  <div class="glow-orb w-64 h-64 sm:w-96 sm:h-96 -top-32 -left-32"></div>
+  <div class="glow-orb w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] top-1/2 -right-32"></div>
+  <div class="glow-orb w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] -bottom-48 left-1/4"></div>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-theme-card/90 border-b border-theme-border transition-all duration-300 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3.5 group py-2">
-        <div class="relative flex items-center justify-center w-10 h-10 rounded-full shadow-sm border border-theme-border overflow-hidden bg-theme-bg">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group py-2">
+        <div class="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full shadow-sm border border-theme-border overflow-hidden bg-theme-bg shrink-0">
           <div class="absolute inset-0 logo-border-gradient animate-border-spin opacity-60"></div>
           <div class="absolute inset-[1.5px] rounded-full bg-theme-bg flex items-center justify-center z-10 transition-colors">
-            <span class="font-serif italic font-bold text-theme-text text-lg group-hover:text-theme-primary transition-colors">BH</span>
+            <span class="font-serif italic font-bold text-theme-text text-base sm:text-lg group-hover:text-theme-primary transition-colors">BH</span>
           </div>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold tracking-wide text-theme-text text-sm sm:text-base group-hover:text-theme-primary transition-colors">BẢO HÂN</span>
+          <span class="font-bold tracking-wide text-theme-text text-sm sm:text-base group-hover:text-theme-primary transition-colors truncate">BẢO HÂN</span>
         </div>
       </a>
+
+      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center gap-2 bg-theme-bg/60 p-1.5 rounded-full border border-theme-border backdrop-blur-md">
         <a href="#about" class="px-4 py-1.5 rounded-full text-sm font-medium text-theme-muted hover:text-theme-primary hover:bg-theme-card transition-all" data-i18n="nav_about">Giới Thiệu</a>
         <a href="#skills" class="px-4 py-1.5 rounded-full text-sm font-medium text-theme-muted hover:text-theme-primary hover:bg-theme-card transition-all" data-i18n="nav_skills">Sở Thích</a>
         <a href="#achievements" class="px-4 py-1.5 rounded-full text-sm font-medium text-theme-muted hover:text-theme-primary hover:bg-theme-card transition-all" data-i18n="nav_achievements">Thành Tựu</a>
         <a href="#experience" class="px-4 py-1.5 rounded-full text-sm font-medium text-theme-muted hover:text-theme-primary hover:bg-theme-card transition-all" data-i18n="nav_exp">Kinh Nghiệm</a>
       </nav>
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-1.5 mr-2 border-r border-theme-border pr-3">
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+
+        <!-- Desktop Theme Switcher -->
+        <div class="hidden lg:flex items-center gap-1.5 mr-2 border-r border-theme-border pr-3">
           <button class="theme-btn w-4 h-4 rounded-full bg-gradient-to-br from-red-600 to-black border border-gray-500 hover:scale-125 transition-transform" data-theme-target="red-black" title="Đỏ Đen (Main)"></button>
           <button class="theme-btn w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-white border border-gray-400 hover:scale-125 transition-transform" data-theme-target="cyan-white" title="Cyan Trắng"></button>
           <button class="theme-btn w-4 h-4 rounded-full bg-gradient-to-br from-gray-800 to-white border border-gray-400 hover:scale-125 transition-transform" data-theme-target="black-white" title="Đen Trắng"></button>
           <button class="theme-btn w-4 h-4 rounded-full bg-gradient-to-br from-red-500 to-white border border-gray-400 hover:scale-125 transition-transform" data-theme-target="red-white" title="Đỏ Trắng"></button>
           <button class="theme-btn w-4 h-4 rounded-full bg-black border border-gray-500 hover:scale-125 transition-transform shadow-[inset_0_0_2px_rgba(255,255,255,0.5)]" data-theme-target="black-dark" title="Đen nền - Chữ Trắng"></button>
         </div>
-        <button id="lang-toggle-btn" class="relative flex items-center p-1 rounded-xl bg-theme-bg border border-theme-border hover:border-theme-primary transition-all text-xs font-semibold cursor-pointer hidden sm:flex">
+
+        <button id="lang-toggle-btn" class="relative items-center p-1 rounded-xl bg-theme-bg border border-theme-border hover:border-theme-primary transition-all text-xs font-semibold cursor-pointer hidden sm:flex shrink-0">
           <span id="lang-vi" class="px-3 py-1 rounded-lg transition-all duration-200 bg-theme-primary text-theme-bg font-bold shadow-sm">VI</span>
           <span id="lang-en" class="px-3 py-1 rounded-lg text-theme-muted hover:text-theme-text transition-all duration-200">EN</span>
         </button>
+
+        <!-- MUSIC PLAYER -->
         <div class="relative group" id="music-player-container">
           <div class="flex items-center bg-theme-bg border border-theme-border rounded-xl p-1 shadow-sm">
             <button id="audio-prev-btn" class="px-2 py-1.5 rounded-lg hover:bg-theme-card text-theme-muted hover:text-theme-primary transition-all cursor-pointer">
-              <i class="fa-solid fa-backward-step text-[10px]"></i>
+              <i class="fa-solid fa-backward-step text-[10px] sm:text-xs"></i>
             </button>
-            <button id="audio-toggle-btn" class="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-theme-card text-theme-text hover:text-theme-primary transition-all cursor-pointer mx-1">
-              <i class="fa-solid fa-play text-xs" id="play-pause-icon"></i>
+            <button id="audio-toggle-btn" class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg hover:bg-theme-card text-theme-text hover:text-theme-primary transition-all cursor-pointer mx-0.5 sm:mx-1">
+              <i class="fa-solid fa-play text-[10px] sm:text-xs" id="play-pause-icon"></i>
             </button>
             <button id="audio-next-btn" class="px-2 py-1.5 rounded-lg hover:bg-theme-card text-theme-muted hover:text-theme-primary transition-all cursor-pointer">
-              <i class="fa-solid fa-forward-step text-[10px]"></i>
+              <i class="fa-solid fa-forward-step text-[10px] sm:text-xs"></i>
             </button>
           </div>
-          <div class="absolute right-0 top-full mt-2 w-56 bg-theme-card border border-theme-border rounded-xl p-2 hidden group-hover:block transition-all shadow-lg backdrop-blur-xl">
+          <!-- Playlist Dropdown (Ẩn trên màn hình quá nhỏ để không bị tràn) -->
+          <div class="absolute right-0 top-full mt-2 w-48 sm:w-56 bg-theme-card border border-theme-border rounded-xl p-2 hidden sm:group-hover:block transition-all shadow-lg backdrop-blur-xl">
             <div class="text-[10px] text-theme-muted font-mono mb-2 px-2 uppercase tracking-widest flex items-center justify-between">
               <span>Playlist</span>
               <i class="fa-solid fa-music text-theme-primary"></i>
@@ -122,75 +144,86 @@
             <ul id="playlist-ul" class="space-y-1 max-h-48 overflow-y-auto custom-scrollbar"></ul>
           </div>
         </div>
-        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-theme-bg border border-theme-border text-theme-muted hover:text-theme-primary transition-colors">
-          <i class="fa-solid fa-bars text-base"></i>
+
+        <!-- Hamburger Menu -->
+        <button id="mobile-menu-btn" class="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-theme-bg border border-theme-border text-theme-muted hover:text-theme-primary transition-colors shrink-0">
+          <i class="fa-solid fa-bars text-sm sm:text-base"></i>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer -->
   <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
-  <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-[280px] bg-theme-card border-l border-theme-border z-50 translate-x-full lg:hidden flex flex-col p-6 shadow-2xl transition-transform duration-300">
-    <div class="flex items-center justify-between pb-4 border-b border-theme-border mb-6">
+  <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-[280px] max-w-[85vw] bg-theme-card border-l border-theme-border z-50 translate-x-full lg:hidden flex flex-col p-5 sm:p-6 shadow-2xl transition-transform duration-300">
+    <div class="flex items-center justify-between pb-4 border-b border-theme-border mb-5">
       <span class="font-bold text-theme-text text-base">BẢO <span class="text-theme-primary">HÂN</span></span>
-      <button id="mobile-close-btn" class="w-8 h-8 rounded-lg bg-theme-bg flex items-center justify-center text-theme-muted hover:text-theme-text">
+      <button id="mobile-close-btn" class="w-8 h-8 rounded-lg bg-theme-bg flex items-center justify-center text-theme-muted hover:text-theme-text active:scale-95">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-    <div class="flex justify-center items-center gap-3 mb-6 pb-6 border-b border-theme-border flex-wrap">
+
+    <!-- Mobile Theme Switcher -->
+    <div class="flex justify-center items-center gap-3 mb-5 pb-5 border-b border-theme-border flex-wrap">
       <button class="theme-btn w-6 h-6 rounded-full bg-gradient-to-br from-red-600 to-black border border-gray-400" data-theme-target="red-black"></button>
       <button class="theme-btn w-6 h-6 rounded-full bg-gradient-to-br from-cyan-400 to-white border border-gray-400" data-theme-target="cyan-white"></button>
       <button class="theme-btn w-6 h-6 rounded-full bg-gradient-to-br from-gray-800 to-white border border-gray-400" data-theme-target="black-white"></button>
       <button class="theme-btn w-6 h-6 rounded-full bg-gradient-to-br from-red-500 to-white border border-gray-400" data-theme-target="red-white"></button>
       <button class="theme-btn w-6 h-6 rounded-full bg-black border border-gray-400 shadow-[inset_0_0_2px_rgba(255,255,255,0.5)]" data-theme-target="black-dark"></button>
     </div>
-    <nav class="flex flex-col space-y-2 mb-6">
-      <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary"><i class="fa-regular fa-user text-theme-primary w-4"></i> <span data-i18n="nav_about">Giới Thiệu</span></a>
-      <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary"><i class="fa-solid fa-star text-theme-primary w-4"></i> <span data-i18n="nav_skills">Sở Thích</span></a>
-      <a href="#achievements" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary"><i class="fa-solid fa-trophy text-theme-primary w-4"></i> <span data-i18n="nav_achievements">Thành Tựu</span></a>
-      <a href="#experience" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary"><i class="fa-solid fa-briefcase text-theme-primary w-4"></i> <span data-i18n="nav_exp">Kinh Nghiệm</span></a>
+
+    <nav class="flex flex-col space-y-2 mb-6 overflow-y-auto">
+      <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary active:bg-theme-bg"><i class="fa-regular fa-user text-theme-primary w-4"></i> <span data-i18n="nav_about">Giới Thiệu</span></a>
+      <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary active:bg-theme-bg"><i class="fa-solid fa-star text-theme-primary w-4"></i> <span data-i18n="nav_skills">Sở Thích</span></a>
+      <a href="#achievements" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary active:bg-theme-bg"><i class="fa-solid fa-trophy text-theme-primary w-4"></i> <span data-i18n="nav_achievements">Thành Tựu</span></a>
+      <a href="#experience" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-theme-text hover:bg-theme-bg hover:text-theme-primary active:bg-theme-bg"><i class="fa-solid fa-briefcase text-theme-primary w-4"></i> <span data-i18n="nav_exp">Kinh Nghiệm</span></a>
     </nav>
-    <div class="flex justify-center border-t border-theme-border pt-6">
-      <button id="lang-toggle-mobile" class="relative flex items-center p-1 rounded-xl bg-theme-bg border border-theme-border text-xs font-semibold cursor-pointer">
-        <span id="lang-vi-mb" class="px-3 py-1 rounded-lg bg-theme-primary text-theme-bg font-bold">VI</span>
-        <span id="lang-en-mb" class="px-3 py-1 rounded-lg text-theme-muted">EN</span>
+
+    <div class="mt-auto border-t border-theme-border pt-5 flex justify-center">
+      <button id="lang-toggle-mobile" class="relative flex items-center p-1 rounded-xl bg-theme-bg border border-theme-border text-xs font-semibold cursor-pointer w-full justify-center">
+        <span id="lang-vi-mb" class="px-6 py-2 rounded-lg bg-theme-primary text-theme-bg font-bold w-1/2 text-center">VI</span>
+        <span id="lang-en-mb" class="px-6 py-2 rounded-lg text-theme-muted w-1/2 text-center">EN</span>
       </button>
     </div>
   </aside>
-  <main class="relative z-10 pt-28 sm:pt-36 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 flex-1 w-full">
-    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[60vh]">
-      <div class="lg:col-span-7 space-y-5 text-left">
-        <div class="flex flex-wrap items-center gap-2.5">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-theme-bg border border-theme-border text-theme-primary text-sm font-medium">
-            <span class="w-2 h-2 rounded-full bg-theme-primary animate-ping"></span>
-            <span data-i18n="hero_status">Học sinh TH, THCS, THPT Đinh Tiên Hoàng</span>
-          </div>
+
+  <main class="relative z-10 pt-24 sm:pt-36 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-24 flex-1 w-full">
+
+    <!-- ABOUT SECTION (Đã tối ưu Responsive) -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center min-h-[60vh]">
+      <!-- Box Nội dung: Trực quan hơn trên điện thoại (căn giữa) -->
+      <div class="lg:col-span-7 space-y-5 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-theme-bg border border-theme-border text-theme-primary text-xs sm:text-sm font-medium">
+          <span class="w-2 h-2 rounded-full bg-theme-primary animate-ping"></span>
+          <span data-i18n="hero_status">Học sinh TH, THCS, THPT Đinh Tiên Hoàng</span>
         </div>
-        <div class="space-y-2">
+        <div class="space-y-2 w-full">
           <p class="text-sm tracking-widest text-theme-muted uppercase font-medium" data-i18n="hero_greeting">Xin chào, tôi là</p>
-          <h1 class="fluid-hero-name font-bold text-theme-text">
+          <h1 class="fluid-hero-name font-bold text-theme-text break-words">
             Nguyễn Ngọc Bảo Hân
             <span class="block fluid-hero-sub mt-2 text-gradient-fresh font-semibold min-h-[1.4em]">
               <span id="typewriter-text"></span><span class="animate-pulse text-theme-primary font-light">|</span>
             </span>
           </h1>
         </div>
-        <p class="text-theme-muted text-base lg:text-lg max-w-xl leading-relaxed" data-i18n="hero_bio">
+        <p class="text-theme-muted text-sm sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_bio">
           Sinh năm 2009, hiện đang là học sinh tại Trường TH, THCS, THPT Đinh Tiên Hoàng. Tôi là một người trẻ nhiệt huyết, mang trong mình niềm đam mê mãnh liệt với nghệ thuật thị giác và âm thanh. Thông qua ống kính máy ảnh, những thước phim tự dựng và giọng hát của mình, tôi khao khát được truyền tải những câu chuyện sống động, lưu giữ khoảnh khắc thanh xuân và lan tỏa năng lượng tích cực đến với cộng đồng.
         </p>
 
         <!-- NÚT TẢI XUỐNG CV -->
-        <div class="mt-8 pt-2">
-          <a href="src/C-V" download class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-theme-primary text-theme-bg font-bold text-sm shadow-lg hover:scale-105 transition-transform duration-300">
+        <div class="mt-6 sm:mt-8 pt-2">
+          <a href="src/C-V" download class="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-theme-primary text-theme-bg font-bold text-sm shadow-lg hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
             <i class="fa-solid fa-cloud-arrow-down"></i>
             <span data-i18n="download_cv">Tải xuống CV</span>
           </a>
         </div>
-
       </div>
-      <div class="lg:col-span-5 flex justify-center items-center">
-        <div class="relative w-64 h-64 sm:w-[340px] sm:h-[340px] group">
-          <div class="absolute inset-[-16px] rounded-full border border-dashed border-theme-primary opacity-50 animate-radar-spin pointer-events-none"></div>
-          <div class="absolute inset-0 rounded-full bg-theme-primary blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+
+      <!-- Avatar Hình tròn -->
+      <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
+        <div class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[340px] lg:h-[340px] group">
+          <div class="absolute inset-[-12px] sm:inset-[-16px] rounded-full border border-dashed border-theme-primary opacity-50 animate-radar-spin pointer-events-none"></div>
+          <div class="absolute inset-0 rounded-full bg-theme-primary blur-2xl sm:blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
           <div class="relative w-full h-full rounded-full p-2 bg-theme-card shadow-lg transition-transform duration-500 tilt-card border border-theme-border">
             <div class="w-full h-full bg-theme-bg rounded-full flex items-center justify-center overflow-hidden relative tilt-inner">
               <img src="src/images/avatar.png" alt="Avatar Bảo Hân" class="w-full h-full object-cover animate-float-subtle scale-110 group-hover:scale-105 transition-transform duration-700">
@@ -199,116 +232,128 @@
         </div>
       </div>
     </section>
-    <section id="skills" class="space-y-8">
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="space-y-6 sm:space-y-8">
       <div class="text-center sm:text-left">
-        <span class="text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="skills_badge">Đam mê & Năng lực</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-theme-text mt-2" data-i18n="skills_title">Sở Thích Nổi Bật</h2>
+        <span class="text-xs sm:text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="skills_badge">Đam mê & Năng lực</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-theme-text mt-1 sm:mt-2" data-i18n="skills_title">Sở Thích Nổi Bật</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card-glass rounded-3xl p-8 tilt-card card-hover group h-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+        <div class="card-glass rounded-3xl p-6 sm:p-8 tilt-card card-hover group h-full">
           <div class="tilt-inner space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-camera"></i></div>
-            <h3 class="text-xl font-bold text-theme-text" data-i18n="skill_card1_title">Nhiếp Ảnh</h3>
-            <p class="text-theme-muted text-sm leading-relaxed" data-i18n="skill_card1_desc">Từng góc máy là một góc nhìn đa chiều. Nhiếp ảnh đối với tôi không chỉ là sở thích mà còn là công cụ để lưu giữ thanh xuân, kể những câu chuyện không lời qua từng khung hình chân thật và đầy cảm xúc.</p>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-xl sm:text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-camera"></i></div>
+            <h3 class="text-lg sm:text-xl font-bold text-theme-text" data-i18n="skill_card1_title">Nhiếp Ảnh</h3>
+            <p class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="skill_card1_desc">Từng góc máy là một góc nhìn đa chiều. Nhiếp ảnh đối với tôi không chỉ là sở thích mà còn là công cụ để lưu giữ thanh xuân, kể những câu chuyện không lời qua từng khung hình chân thật và đầy cảm xúc.</p>
           </div>
         </div>
-        <div class="card-glass rounded-3xl p-8 tilt-card card-hover group h-full">
+        <div class="card-glass rounded-3xl p-6 sm:p-8 tilt-card card-hover group h-full">
           <div class="tilt-inner space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-microphone-lines"></i></div>
-            <h3 class="text-xl font-bold text-theme-text" data-i18n="skill_card2_title">Ca Hát</h3>
-            <p class="text-theme-muted text-sm leading-relaxed" data-i18n="skill_card2_desc">Âm nhạc là ngôn ngữ của tâm hồn. Qua từng giai điệu, tôi tìm thấy sự đồng điệu để bộc lộ cảm xúc sâu kín và mang lại nguồn năng lượng tích cực, kết nối mọi người lại gần nhau hơn trong các sự kiện.</p>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-xl sm:text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3 class="text-lg sm:text-xl font-bold text-theme-text" data-i18n="skill_card2_title">Ca Hát</h3>
+            <p class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="skill_card2_desc">Âm nhạc là ngôn ngữ của tâm hồn. Qua từng giai điệu, tôi tìm thấy sự đồng điệu để bộc lộ cảm xúc sâu kín và mang lại nguồn năng lượng tích cực, kết nối mọi người lại gần nhau hơn trong các sự kiện.</p>
           </div>
         </div>
-        <div class="card-glass rounded-3xl p-8 tilt-card card-hover group h-full">
+        <div class="card-glass rounded-3xl p-6 sm:p-8 tilt-card card-hover group h-full">
           <div class="tilt-inner space-y-4">
-            <div class="w-14 h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-film"></i></div>
-            <h3 class="text-xl font-bold text-theme-text" data-i18n="skill_card3_title">Dựng Phim</h3>
-            <p class="text-theme-muted text-sm leading-relaxed" data-i18n="skill_card3_desc">Biến những mảnh ghép hình ảnh rời rạc thành tác phẩm nghệ thuật. Tôi say mê nghiên cứu nhịp điệu cắt ghép, hiệu ứng âm thanh và màu sắc để tạo ra những thước phim truyền tải thông điệp lôi cuốn.</p>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-theme-bg border border-theme-border flex items-center justify-center text-theme-primary text-xl sm:text-2xl group-hover:border-theme-primary transition-colors"><i class="fa-solid fa-film"></i></div>
+            <h3 class="text-lg sm:text-xl font-bold text-theme-text" data-i18n="skill_card3_title">Dựng Phim</h3>
+            <p class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="skill_card3_desc">Biến những mảnh ghép hình ảnh rời rạc thành tác phẩm nghệ thuật. Tôi say mê nghiên cứu nhịp điệu cắt ghép, hiệu ứng âm thanh và màu sắc để tạo ra những thước phim truyền tải thông điệp lôi cuốn.</p>
           </div>
         </div>
       </div>
     </section>
-    <section id="achievements" class="space-y-8">
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="space-y-6 sm:space-y-8">
       <div class="text-center sm:text-left">
-        <span class="text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="projects_badge">Góc Tự Hào</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-theme-text mt-2" data-i18n="projects_title">Bảng Vàng Thành Tích</h2>
-        <p class="text-theme-muted text-sm mt-3 max-w-2xl mx-auto sm:mx-0">
+        <span class="text-xs sm:text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="projects_badge">Góc Tự Hào</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-theme-text mt-1 sm:mt-2" data-i18n="projects_title">Bảng Vàng Thành Tích</h2>
+        <p class="text-theme-muted text-xs sm:text-sm mt-2 sm:mt-3 max-w-2xl mx-auto sm:mx-0">
           <span data-i18n="achievements_subtext">Những giải thưởng đánh dấu sự nỗ lực và khả năng sáng tạo nghệ thuật.</span>
           <br><strong class="text-theme-primary cursor-pointer hover:opacity-80 transition-opacity" id="text-click-hint" data-i18n="click_hint">(Nhấn vào ảnh để xem chi tiết)</strong>
         </p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <div class="card-glass p-3 rounded-3xl tilt-card card-hover flex items-center justify-center cursor-pointer group" id="open-lightbox-btn" title="Phóng to ảnh">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+        <div class="card-glass p-2 sm:p-3 rounded-3xl tilt-card card-hover flex items-center justify-center cursor-pointer group h-48 sm:h-auto" id="open-lightbox-btn" title="Phóng to ảnh">
           <div class="tilt-inner overflow-hidden rounded-2xl w-full h-full relative bg-theme-bg">
             <img src="src/achievements/2aOboR2Hdd96AhxbqOh86BfuNt95fIBEb9z9tOVc.jpg" alt="Thành tựu của Bảo Hân" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-theme-card/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
-              <i class="fa-solid fa-expand text-4xl text-theme-primary mb-2 shadow-sm drop-shadow-md"></i>
+              <i class="fa-solid fa-expand text-3xl sm:text-4xl text-theme-primary mb-2 shadow-sm drop-shadow-md"></i>
               <span class="text-theme-text text-sm font-bold tracking-wide drop-shadow-md">Phóng to</span>
             </div>
           </div>
         </div>
-        <div class="card-glass p-6 sm:p-8 rounded-3xl flex flex-col min-h-[300px]">
-          <h3 class="text-lg font-bold text-theme-text mb-6 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center"><i class="fa-solid fa-list-check text-theme-primary text-sm"></i></div>
+
+        <div class="card-glass p-5 sm:p-8 rounded-3xl flex flex-col min-h-[250px] sm:min-h-[300px] max-h-[400px] sm:max-h-[500px]">
+          <h3 class="text-base sm:text-lg font-bold text-theme-text mb-4 sm:mb-6 flex items-center gap-3">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center shrink-0"><i class="fa-solid fa-list-check text-theme-primary text-xs sm:text-sm"></i></div>
             <span data-i18n="list_title">Chi tiết các hạng mục</span>
           </h3>
-          <ul class="space-y-3 overflow-y-auto pr-3 custom-scrollbar flex-1" id="detailed-achievements-list">
+          <ul class="space-y-3 overflow-y-auto pr-2 custom-scrollbar flex-1" id="detailed-achievements-list">
+            <!-- Render via JS -->
           </ul>
         </div>
       </div>
     </section>
-    <section id="experience" class="space-y-8">
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="space-y-6 sm:space-y-8">
       <div class="text-center sm:text-left">
-        <span class="text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="exp_badge">Dấu Ấn</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-theme-text mt-2" data-i18n="exp_title">Kinh Nghiệm Thực Tế</h2>
+        <span class="text-xs sm:text-sm text-theme-primary uppercase tracking-widest font-semibold" data-i18n="exp_badge">Dấu Ấn</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-theme-text mt-1 sm:mt-2" data-i18n="exp_title">Kinh Nghiệm Thực Tế</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-         <div class="card-glass rounded-3xl p-6 lg:p-8 card-hover h-full flex flex-col">
-           <div class="w-12 h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-xl mb-5 shrink-0"><i class="fa-solid fa-camera-retro"></i></div>
-           <h3 class="text-lg font-bold text-theme-text mb-4" data-i18n="exp_cat1">Nhiếp Ảnh & Sự Kiện</h3>
-           <div class="text-theme-muted text-sm leading-relaxed" data-i18n="exp_desc1">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+         <!-- Card 1 -->
+         <div class="card-glass rounded-3xl p-6 sm:p-8 card-hover h-full flex flex-col">
+           <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-5 shrink-0"><i class="fa-solid fa-camera-retro"></i></div>
+           <h3 class="text-base sm:text-lg font-bold text-theme-text mb-3 sm:mb-4" data-i18n="exp_cat1">Nhiếp Ảnh & Sự Kiện</h3>
+           <div class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="exp_desc1">
              <ul class="space-y-3">
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">120 năm Nước mắm Liên Thành:</strong> Đảm nhận chụp ảnh sự kiện trọng đại và lễ khánh thành triển lãm quy mô lớn.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">101 năm Báo chí Cách mạng VN:</strong> Tác nghiệp nhiếp ảnh (21/06/2026), bắt trọn những khoảnh khắc tri ân trang trọng.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">Nhiếp ảnh Kỷ yếu (Freelance):</strong> Thực hiện các bộ ảnh thanh xuân nghệ thuật cho học sinh tại: THPT Đinh Tiên Hoàng, Giồng Ông Tố (TP.HCM), Vĩnh Cửu, Bùi Thị Xuân, Lê Quý Đôn - Quyết Thắng...
                </li>
              </ul>
            </div>
          </div>
-         <div class="card-glass rounded-3xl p-6 lg:p-8 card-hover h-full flex flex-col">
-           <div class="w-12 h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-xl mb-5 shrink-0"><i class="fa-solid fa-bullhorn"></i></div>
-           <h3 class="text-lg font-bold text-theme-text mb-4" data-i18n="exp_cat2">Truyền Thông & Tổ Chức</h3>
-           <div class="text-theme-muted text-sm leading-relaxed" data-i18n="exp_desc2">
+         <!-- Card 2 -->
+         <div class="card-glass rounded-3xl p-6 sm:p-8 card-hover h-full flex flex-col">
+           <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-5 shrink-0"><i class="fa-solid fa-bullhorn"></i></div>
+           <h3 class="text-base sm:text-lg font-bold text-theme-text mb-3 sm:mb-4" data-i18n="exp_cat2">Truyền Thông & Tổ Chức</h3>
+           <div class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="exp_desc2">
              <ul class="space-y-3">
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">Ban tổ chức CLEANUP 8 VN:</strong> Tham gia hỗ trợ truyền thông với vai trò ban tổ chức chiến dịch của Xanh Đồng Nai.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">Sự kiện UCC 2025 (UMT):</strong> Hỗ trợ chuyên môn truyền thông cho sự kiện lớn của CLB Marketing, Đại học Quản lý và Công nghệ TP.HCM.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">Hỗ trợ Truyền thông Học đường:</strong> Đóng vai trò khách mời truyền thông Hội trại THCS Tam Phước, Hội trại (2024) và Lễ tri ân (2024, 2025) tại trường Đinh Tiên Hoàng.
                </li>
              </ul>
            </div>
          </div>
-         <div class="card-glass rounded-3xl p-6 lg:p-8 card-hover h-full flex flex-col">
-           <div class="w-12 h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-xl mb-5 shrink-0"><i class="fa-solid fa-hand-holding-heart"></i></div>
-           <h3 class="text-lg font-bold text-theme-text mb-4" data-i18n="exp_cat3">Hoạt Động Tình Nguyện</h3>
-           <div class="text-theme-muted text-sm leading-relaxed" data-i18n="exp_desc3">
+         <!-- Card 3 -->
+         <div class="card-glass rounded-3xl p-6 sm:p-8 card-hover h-full flex flex-col">
+           <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-theme-bg border border-theme-border text-theme-primary flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-5 shrink-0"><i class="fa-solid fa-hand-holding-heart"></i></div>
+           <h3 class="text-base sm:text-lg font-bold text-theme-text mb-3 sm:mb-4" data-i18n="exp_cat3">Hoạt Động Tình Nguyện</h3>
+           <div class="text-theme-muted text-xs sm:text-sm leading-relaxed" data-i18n="exp_desc3">
              <ul class="space-y-3">
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">EARTHDAY VIỆT NAM 2025:</strong> Hoạt động năng nổ với vai trò Tình nguyện viên ban truyền thông, sáng tạo nội dung lan tỏa lối sống xanh.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">CLEANUP 7 VIỆT NAM:</strong> Xông pha tại hiện trường, ghi hình và viết bài truyền thông bảo vệ môi trường cùng Xanh Đồng Nai.
                </li>
-               <li class="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
+               <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full">
                  <strong class="text-theme-text font-semibold">Ngày Chủ nhật xanh cấp TP lần III:</strong> Đóng góp sức trẻ, lan tỏa thông điệp bảo vệ môi trường, giữ gìn cảnh quan sạch đẹp đến cộng đồng.
                </li>
              </ul>
@@ -316,28 +361,31 @@
          </div>
       </div>
     </section>
+
   </main>
-  <footer class="mt-auto border-t border-theme-border bg-theme-bg/90 backdrop-blur-md pt-12 pb-8 relative z-10 w-full transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-6">
-      <div class="text-center space-y-2">
-        <h3 class="font-serif italic font-bold text-theme-text text-2xl">...</h3>
-        <p class="text-theme-muted text-sm max-w-md mx-auto italic" data-i18n="footer_quote">
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-theme-border bg-theme-bg/90 backdrop-blur-md pt-10 pb-6 relative z-10 w-full transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-5 sm:gap-6">
+      <div class="text-center space-y-1.5 sm:space-y-2">
+        <h3 class="font-serif italic font-bold text-theme-text text-xl sm:text-2xl">...</h3>
+        <p class="text-theme-muted text-xs sm:text-sm max-w-sm sm:max-w-md mx-auto italic px-4" data-i18n="footer_quote">
           "Nghệ thuật là cách tôi lưu giữ thanh xuân và kể những câu chuyện không lời."
         </p>
       </div>
-      <div class="flex items-center gap-4 mt-2">
-        <a href="https://www.facebook.com/share/1CnDZFALYa/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
-          <i class="fa-brands fa-facebook-f"></i>
+      <div class="flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2">
+        <a href="https://www.facebook.com/share/1CnDZFALYa/?mibextid=wwXIfr" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
+          <i class="fa-brands fa-facebook-f text-sm sm:text-base"></i>
         </a>
-        <a href="https://www.instagram.com/callme.hbe?stkn=enFrbG1vMWk3anFn&utm_source=qr" target="_blank" class="w-10 h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
-          <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagram.com/callme.hbe?stkn=enFrbG1vMWk3anFn&utm_source=qr" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
+          <i class="fa-brands fa-instagram text-sm sm:text-base"></i>
         </a>
-        <a href="mailto:hannguyen19082009@gmail.com" class="w-10 h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
-          <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:hannguyen19082009@gmail.com" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-theme-bg border border-theme-border flex items-center justify-center text-theme-muted hover:text-theme-primary hover:border-theme-primary hover:shadow-[0_0_15px_var(--primary-color)] transition-all hover:-translate-y-1">
+          <i class="fa-solid fa-envelope text-sm sm:text-base"></i>
         </a>
       </div>
-      <div class="w-full border-t border-theme-border/50 pt-6 mt-2 text-center">
-        <p class="text-xs sm:text-sm text-theme-muted font-medium" data-i18n="footer_copy">
+      <div class="w-full border-t border-theme-border/50 pt-5 mt-2 text-center">
+        <p class="text-[10px] sm:text-xs text-theme-muted font-medium" data-i18n="footer_copy">
           ©2026 callme.hanbe | Designed By Nguyễn Hoàng Quân
         </p>
       </div>
