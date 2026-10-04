@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. HỆ THỐNG ĐỔI THEME
   const themeBtns = document.querySelectorAll('.theme-btn');
   themeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. HỆ THỐNG HẠT (PARTICLES)
   const canvas = document.getElementById('particles-canvas');
   let updateParticleColor = () => {};
 
@@ -96,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animateParticles();
   }
 
-  // 3. AUDIO PLAYER
   const bgMusic = document.getElementById('bg-music');
   const audioToggleBtn = document.getElementById('audio-toggle-btn');
   const audioPrevBtn = document.getElementById('audio-prev-btn');
@@ -181,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(audioPrevBtn) audioPrevBtn.addEventListener('click', prevTrack);
   }
 
-  // 4. MÀN HÌNH INTRO
   const introScreen = document.getElementById('intro-screen');
   const introContent = document.getElementById('intro-content');
   const enterBtn = document.getElementById('enter-btn');
@@ -197,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. LIGHTBOX CẬP NHẬT CHO GALLERY ĐA ẢNH
   const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeLightboxBtn = document.getElementById('close-lightbox');
@@ -231,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. ĐA NGÔN NGỮ
   const translations = {
     vi: {
       intro_sub: "Danh Mục Cá Nhân & Thành Tựu",
@@ -396,7 +390,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLangBtn.addEventListener('click', () => applyLanguage(currentLang === 'vi' ? 'en' : 'vi'));
   }
 
-  // 7. HIỆU ỨNG GÕ CHỮ (TYPEWRITER)
   let roleIdx = 0, charIdx = 0, isDeleting = false, typeTimer = null;
   const typewriterElem = document.getElementById('typewriter-text');
 
@@ -435,7 +428,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyLanguage('vi');
 
-  // 8. HIỆU ỨNG TILT 3D
   if (window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.tilt-card').forEach(card => {
       card.addEventListener('mousemove', e => {
@@ -446,7 +438,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. MOBILE MENU
   const mBtn = document.getElementById('mobile-menu-btn');
   const mClose = document.getElementById('mobile-close-btn');
   const mDrawer = document.getElementById('mobile-drawer');
