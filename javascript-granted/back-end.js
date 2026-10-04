@@ -1,3 +1,8 @@
+if (window.location.search.includes('fbclid=')) {
+  const cleanUrl = window.location.origin + window.location.pathname;
+  window.history.replaceState(null, null, cleanUrl);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const themeBtns = document.querySelectorAll('.theme-btn');
