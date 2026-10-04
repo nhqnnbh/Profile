@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
       exp_cat3: "Hoạt Động Tình Nguyện",
       exp_desc3: "<ul class='space-y-3'><li class='relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full'><strong class='text-theme-text font-semibold'>EARTHDAY VIỆT NAM 2025:</strong> Hoạt động năng nổ với vai trò Tình nguyện viên ban truyền thông, sáng tạo nội dung lan tỏa lối sống xanh.</li><li class='relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full'><strong class='text-theme-text font-semibold'>CLEANUP 7 VIỆT NAM:</strong> Xông pha tại hiện trường, ghi hình và viết bài truyền thông bảo vệ môi trường cùng Xanh Đồng Nai.</li><li class='relative pl-4 before:absolute before:left-0 before:top-1.5 sm:before:top-2 before:w-1.5 before:h-1.5 before:bg-[var(--primary-color)] before:rounded-full'><strong class='text-theme-text font-semibold'>Ngày Chủ nhật xanh cấp TP lần III:</strong> Đóng góp sức trẻ, lan tỏa thông điệp bảo vệ môi trường, giữ gìn cảnh quan sạch đẹp đến cộng đồng.</li></ul>",
       footer_quote: "\"Nghệ thuật là cách tôi lưu giữ thanh xuân và kể những câu chuyện không lời.\"",
-      footer_copy: "© 2026 Nguyễn Ngọc Bảo Hân. Thiết kế giao diện Học Sinh gọn nhẹ & thanh lịch."
+      footer_copy: "©2026 callme.hanbe | Designed By Nguyễn Hoàng Quân."
     },
     en: {
       intro_sub: "Personal Portfolio & Achievements",
